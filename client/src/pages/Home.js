@@ -11,6 +11,7 @@ import {
   CardColumns
 
 } from "react-bootstrap";
+// I like what you did there...
 
 const Home = () => {
 return(
