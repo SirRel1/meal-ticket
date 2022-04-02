@@ -7,7 +7,7 @@ const Signup = () => {
 
 return (
 
-  <Container className='my-5' >
+  <Container className='p-5 mt-5 bg-white border border-5 border-dark' >
 <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
