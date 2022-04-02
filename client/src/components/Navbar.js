@@ -13,7 +13,7 @@ const AppNavbar = () => {
   return (
     <Navbar bg="dark" expand="lg">
     <Container fluid>
-      <Navbar.Brand className='display-1 text-warning' href="/">Meat Ticket</Navbar.Brand>
+      <Navbar.Brand className='display-1 text-warning' href="/">MEAL TICKET</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -25,8 +25,8 @@ const AppNavbar = () => {
           {/* <Nav.Link href="#action2">Enter</Nav.Link> */}
           <NavDropdown title={<span className='text-light'>Enter</span>} id="navbarScrollingDropdown">
             
-            <NavDropdown.Item href="signup">Login</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Signup</NavDropdown.Item>
+            <NavDropdown.Item href="login">Login</NavDropdown.Item>
+            <NavDropdown.Item href="signup">Signup</NavDropdown.Item>
             {/* <NavDropdown.Divider /> */}
             {/* <NavDropdown.Item href="#action5">
               Something else here

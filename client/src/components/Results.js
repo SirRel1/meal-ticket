@@ -23,6 +23,7 @@ return (
       <Col className='pt-5'>
         <h1>Bob's BBQ Bar</h1>
         <p>Come get the best BBQ in town!</p>
+        <Button variant="warning" href="choice">Select</Button>
       </Col>
     </Row>
 

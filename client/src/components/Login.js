@@ -2,23 +2,13 @@ import { Navbar, Nav, Container, NavDropdown, Form, FormControl, Button  } from 
 
 
 
-const Signup = () => {
+const Login = () => {
 
 
 return (
 
   <Container className='p-5 mt-5 bg-white border border-5 border-dark' >
 <Form>
-<Form.Group className="mb-3" controlId="formFirstname">
-    <Form.Label>First Name</Form.Label>
-    <Form.Control type="text" placeholder="Enter first name" />
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formLastname">
-    <Form.Label>Last Name</Form.Label>
-    <Form.Control type="text" placeholder="Enter last name" />
-  </Form.Group>
-
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" placeholder="Enter email" />
@@ -43,4 +33,4 @@ return (
 
 }
 
-export default Signup;
+export default Login;
