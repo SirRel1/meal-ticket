@@ -10,6 +10,18 @@ export const CREATE_MATCHUP = gql`
   }
 `;
 
+export const createUser = gql`
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
+
 export const CREATE_VOTE = gql`
   mutation createVote($_id: String!, $techNum: Int!) {
     createVote(_id: $_id, techNum: $techNum) {

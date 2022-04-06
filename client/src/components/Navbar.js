@@ -26,7 +26,7 @@ const AppNavbar = () => {
           <NavDropdown title={<span className='text-light'>Enter</span>} id="navbarScrollingDropdown">
             
             <NavDropdown.Item href="signup">Login</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Signup</NavDropdown.Item>
+            <NavDropdown.Item href="/signup">Signup</NavDropdown.Item>
             {/* <NavDropdown.Divider /> */}
             {/* <NavDropdown.Item href="#action5">
               Something else here
