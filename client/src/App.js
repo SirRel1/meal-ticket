@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
@@ -16,15 +16,35 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+
+  const [page, setPage] = useState(true);
+
+  const [results, setResults] = useState( );
+
+  const [searchInput, setSearchInput] = useState('');
+
+  const [holder, setHolder] = useState();
+
+  const [selected, setSelected] = useState(
+    [
+      {image: "https://th.bing.com/th/id/R.46c2726825537e028da5d4cc13a1d897?rik=vaSJxALonWee5g&pid=ImgRaw&r=0",
+    title: "Chucky BBQ",
+    description: "get this food becasue it won't last long"}
+  ]
+    );
+
+
   return (
+    
     <ApolloProvider client={client}>
       <Router>
         <div>
-        <Navbar />
+        <Navbar setPage={setPage} setResults={setResults} setSearchInput={setSearchInput} setHolder={setHolder} searchInput={searchInput} />
           <Routes>
             <Route 
               path="/" 
-              element={<Home/>}
+              element={<Home page={page} results={results} holder={holder} setSelected={setSelected}/>}
             />
             <Route 
               path="/login" 
@@ -40,7 +60,7 @@ function App() {
             />
              <Route 
               path="/choice"
-              element={<Choice/>}
+              element={<Choice selected={selected} />}
             />
             <Route 
               path="/matchup/:id" 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Results from '../components/Results';
 
 import {
   Container,
@@ -12,11 +13,14 @@ import {
 
 } from "react-bootstrap";
 
-const Home = () => {
+const Home = ({page, results, holder, setSelected }) => {
+
+  // const test = true
+
 return(
 
-
-<Container fluid className="p-5">
+<div>
+{ page ?(<Container fluid className="p-5">
   <Row className=" shadow-lg p-4 mb-4 bg-white border border-5 border-dark">
     <Col>
     <img
@@ -29,13 +33,15 @@ return(
     <h1 className="display-1 text-center pt-5">Come Get Your Meal Ticket!</h1>
     </Col>
   </Row>
-</Container>
-
+</Container>)
+:
+(<Results results={results} holder={holder} setSelected={setSelected} />)
+}
 
 
 
   
-
+</div>
 )
 
 
