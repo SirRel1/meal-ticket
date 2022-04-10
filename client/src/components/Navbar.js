@@ -33,7 +33,9 @@ const AppNavbar = () => {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link className='text-light'>Random</Nav.Link>
+          <Nav.Link className='text-light' href="/fav">Favs</Nav.Link>
+
+          {/* <Nav.Link className='text-light'><NavLink to={"/fav"}>FAV</NavLink></Nav.Link> */}
           {/* <Nav.Link href="#action2">Enter</Nav.Link> */}
           <NavDropdown title={<span className='text-light'>Enter</span>} id="navbarScrollingDropdown">
             

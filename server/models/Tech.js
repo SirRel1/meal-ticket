@@ -1,10 +1,16 @@
 const { Schema, model } = require('mongoose');
 
 const techSchema = new Schema({
-  name: {
+  resid: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
+  },
+  imageurl: {
+    type: String,
+  },
+  name: {
+    type: String,
   },
 });
 

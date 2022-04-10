@@ -17,10 +17,9 @@ function App() {
   return (
     
     <ApolloProvider client={client}>
-      <div>
       
      <Pages />
-     </div>
+     
    </ApolloProvider>
     
   );

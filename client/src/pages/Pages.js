@@ -6,7 +6,7 @@ import Login from '../components/Login';
 import Signup from '../components/Signup';
 import Choice from '../components/Choice';
 import Navbar from '../components/Navbar';
-
+import Fav from '../components/Fav';
 
 
 function Pages() {
@@ -18,7 +18,8 @@ function Pages() {
        <Route path="/results/:id" element={<Results />} />
        <Route path="/login" element={<Login />} />
        <Route path="/signup" element={<Signup />} />
-       <Route path="/choice" element={<Choice />} />
+       <Route path="/choice/:id" element={<Choice />} />
+       <Route path="/fav" element={<Fav />} />
         
     </Routes>
     </Router>

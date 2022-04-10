@@ -1,5 +1,21 @@
 import { gql } from '@apollo/client';
 
+
+
+
+
+
+
+export const CREATE_Rest = gql`
+mutation SaveBook($resid: String!, $imageurl: String, $name: String) {
+  saveBook(resid: $resid, imageurl: $imageurl, name: $name) {
+    _id
+    resid
+    imageurl
+  }
+}
+`;
+
 export const CREATE_MATCHUP = gql`
   mutation createMatchup($tech1: String!, $tech2: String!) {
     createMatchup(tech1: $tech1, tech2: $tech2) {

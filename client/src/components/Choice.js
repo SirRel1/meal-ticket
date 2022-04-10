@@ -5,11 +5,7 @@ import { Row, Col, Container, NavDropdown, Form, FormControl, Button  } from 're
 
 
 
-const Choice = (props) => {
-
-  console.log (props)
-
-  console.log (props.selected)
+const Choice = () => {
 
 
 return (
@@ -19,10 +15,10 @@ return (
     
     <img width="auto" height="300"
       className=" mt-3 rounded border border-3 mx-auto d-block "
-      src={props.selected[0].image}
+      src={"https://th.bing.com/th/id/R.46c2726825537e028da5d4cc13a1d897?rik=vaSJxALonWee5g&pid=ImgRaw&r=0"}
       alt="First slide"
     />
- <h1 className='display-1 text-center my-1'>{props.selected[0].title}</h1>
+ <h1 className='display-1 text-center my-1'>{}</h1>
 
 <Container>
 <Row className=' my-3 shadow-lg p-4 bg-white border border-5 border-dark'>
@@ -35,7 +31,7 @@ return (
       </Col>
       <Col className='my-auto'>
         <h1>Item</h1>
-        <p>{props.selected[0].description}</p>
+        <p>{}</p>
       </Col>
 
       <Col className="my-auto col-md-1">
