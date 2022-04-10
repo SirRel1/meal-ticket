@@ -44,7 +44,7 @@ const Results = () => {
         // variables:   {id, image_url, foodname}=foodToSave ,
         variables: { resid: foodToSave.id, imageurl: foodToSave.image_url, name: foodToSave.foodname  },
       });
-      alert("Added to FAV")
+      // alert("Added to FAV")
       console.log(data);
       // setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
