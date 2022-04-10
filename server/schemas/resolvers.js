@@ -1,4 +1,5 @@
 const { Tech, Matchup } = require('../models');
+// const { where } = require('../models/Tech');
 
 const resolvers = {
   Query: {
@@ -20,11 +21,17 @@ const resolvers = {
       return rest;
     },
 
-    // removeRest: async (parent,  args ) => {
-    //   const removeOne = await Tech.findOneAndDelete(
-    //     resid: args);
+    removeRest: async (parent, { did }) => {
+      return Tech.findOneAndDelete({ resid: did });
+    },
+
+    // removeRest: async (parent,  id ) => {
+    //   const removeOne = await Tech.findOneAndRemove( 
+    //     { resid:  id   },
+    //   )
     //   return removeOne;
     // },
+    
 
     // const updatedUser = await User.findOneAndUpdate(
     //   { _id: context.user._id },

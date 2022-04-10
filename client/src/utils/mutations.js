@@ -16,14 +16,15 @@ mutation SaveBook($resid: String!, $imageurl: String, $name: String) {
 }
 `;
 
-export const CREATE_MATCHUP = gql`
-  mutation createMatchup($tech1: String!, $tech2: String!) {
-    createMatchup(tech1: $tech1, tech2: $tech2) {
-      _id
-      tech1
-      tech2
-    }
+export const REMOVE_FAV = gql`
+mutation Mutation($did: String!) {
+  removeRest(did: $did) {
+    _id
+    resid
+    imageurl
+    name
   }
+}
 `;
 
 export const CREATE_VOTE = gql`

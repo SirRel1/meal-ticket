@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react';
 
 import { Row, Col, Container, NavDropdown, Form, FormControl, Button  } from 'react-bootstrap';
 
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // import axios from 'axios';
 import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
 import { QUERY_FAV } from '../utils/queries';
+import { REMOVE_FAV } from '../utils/mutations';
 
 
 
@@ -16,26 +17,40 @@ import { QUERY_FAV } from '../utils/queries';
 
 function Fav() {
 
-  // const [favs, setFavs] = useState()
+  const [favs, setFavs] = useState()
+
+  const navigate = useNavigate();
 
   const { loading, data } = useQuery(QUERY_FAV);
+  const [removeFav, { error }] = useMutation(REMOVE_FAV);
 
 
-
-  const handleDeleteBook = async (bookId) => {
+  const handleDeleteFav = async (id) => {
    
 
-    // try {
-    //   const { data } = await removeBook({
-    //     variables: { bookId },
-    //   });
+     try {
+      const { data } = await removeFav({
 
-    // } catch (err) {
-    //   console.error(err);
-    // }
+        variables: { did: id },
+      });
+      // alert("FAV DELETED")
+      console.log(data);
+      setFavs(data)
+    } catch (err) {
+      console.error(err);
+    }
+
+    window.location.reload()
+    // navigate (`/fav`)
   };
 
+  // useEffect(() => {
+
+    // getResults(params.id)
+    // alert("test")
+    // window.location.reload()
   
+  //  }, [favs]);
 
   
 if (loading) {
@@ -85,8 +100,8 @@ else {
         <Col className='pt-5'>
           <h1>{item.name}</h1>
           {/* <p>{item.location.address1}</p> */}
-          <Button  variant="warning" >REMOVE</Button>
-          {/* onClick={() => handleDelete(item.resid)} */}
+          <Button onClick={() => handleDeleteFav(item.resid)} variant="warning" >REMOVE</Button>
+          {/* onClick={() => handleDeleteFav(item.resid)} */}
           <Link to= {"/choice/"+item.resid}>
           <Button  variant="warning" >SELECT</Button>
           </Link>

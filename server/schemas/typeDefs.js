@@ -24,6 +24,7 @@ const typeDefs = gql`
 
   type Mutation {
     saveBook(resid: String!, imageurl: String, name: String): Tech
+    removeRest(did: String!): Tech
     createMatchup(tech1: String!, tech2: String!): Matchup
     createVote(_id: String!, techNum: Int!): Matchup
   }
