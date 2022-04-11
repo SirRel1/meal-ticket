@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { useNavigate, NavLink, Link } from 'react-router-dom';
 import { Navbar, Nav, Container, NavDropdown, Form, FormControl, Button  } from 'react-bootstrap';
+// import Results from './components/Results';
 // import SignUpForm from './SignupForm';
 // import LoginForm from './LoginForm';
 
 // import Auth from '../utils/auth';
 
 const AppNavbar = () => {
-  // set modal display state
-  // const [showModal, setShowModal] = useState(false);
+
+  const [searchInput, setSearchInput] = useState('');
+
+  const navigate = useNavigate();
+
+  
+    const handleClick = () => {
+  
+     navigate (`/results/`+searchInput);
+     
+    };
+  
 
   return (
     <Navbar bg="dark" expand="lg">
-    <Container fluid>
-      <Navbar.Brand className='display-1 text-warning' href="/">Meat Ticket</Navbar.Brand>
+  
+  <Container fluid>
+      <Navbar.Brand className='display-1 text-warning' href="/">MEAL TICKET</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -21,12 +33,16 @@ const AppNavbar = () => {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link className='text-light' href="#action1">Random</Nav.Link>
+          <Nav.Link className='text-light' href="/fav">Favs</Nav.Link>
+
+          {/* <Nav.Link className='text-light'><NavLink to={"/fav"}>FAV</NavLink></Nav.Link> */}
           {/* <Nav.Link href="#action2">Enter</Nav.Link> */}
           <NavDropdown title={<span className='text-light'>Enter</span>} id="navbarScrollingDropdown">
             
-            <NavDropdown.Item href="signup">Login</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Signup</NavDropdown.Item>
+            <NavDropdown.Item > <NavLink to={"/login"}>Login</NavLink></NavDropdown.Item>
+            
+            
+            <NavDropdown.Item> <NavLink to={"/signup"}>Signup</NavLink></NavDropdown.Item>
             {/* <NavDropdown.Divider /> */}
             {/* <NavDropdown.Item href="#action5">
               Something else here
@@ -36,17 +52,23 @@ const AppNavbar = () => {
             Link
           </Nav.Link> */}
         </Nav>
-        <Form className="d-flex">
+        <Form  className="d-flex"  >
+        {/* onSubmit={handleFormSubmit} */}
           <FormControl
+           name="searchInput"
+           value={searchInput}
+           onChange={(e) => setSearchInput(e.target.value)}
             type="search"
             placeholder="Enter zip code"
             className="me-2"
             aria-label="Search"
           />
-          <Button href="result" variant="outline-warning">Search Nearby</Button>
+          <Button onClick={handleClick} type="submit" variant="outline-warning">Search Nearby</Button>
+          {/* onClick={handleClick} */}
         </Form>
       </Navbar.Collapse>
     </Container>
+    
   </Navbar>
   )}
 

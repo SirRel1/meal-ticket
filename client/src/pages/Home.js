@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 import {
   Container,
   Col,
@@ -14,10 +15,13 @@ import {
 // I like what you did there...
 
 const Home = () => {
+
+  
+
 return(
 
-
-<Container fluid className="p-5">
+<div>
+(<Container fluid className="p-5">
   <Row className=" shadow-lg p-4 mb-4 bg-white border border-5 border-dark">
     <Col>
     <img
@@ -30,13 +34,13 @@ return(
     <h1 className="display-1 text-center pt-5">Come Get Your Meal Ticket!</h1>
     </Col>
   </Row>
-</Container>
+</Container>)
 
 
 
 
   
-
+</div>
 )
 
 

@@ -1,12 +1,14 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_TECH = gql`
-  query tech {
-    tech {
-      _id
-      name
-    }
+export const QUERY_FAV = gql`
+  query Query {
+  savedRest {
+    _id
+    resid
+    imageurl
+    name
   }
+}
 `;
 
 export const QUERY_MATCHUPS = gql`
