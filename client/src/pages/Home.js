@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Tacos from '../components/NavBar/img/tacoPic.png'
 
 
 import {
@@ -26,7 +27,7 @@ return(
     <Col>
     <img
       className="d-block w-100 border border-5 border-dark "
-      src="https://4.bp.blogspot.com/-8FRVQIl-BSo/WB9VIYB4wqI/AAAAAAAAFy0/pXZzdJzb21YI0ip3AqgMMLY8lVxHPY4MwCLcB/s1600/meal_ticket.jpg"
+      src={Tacos}
       alt="First slide"
     />
     </Col>

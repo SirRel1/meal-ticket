@@ -1,11 +1,19 @@
-
+import React, { useState, useEffect } from 'react';
 
 
 import { Row, Col, Container, NavDropdown, Form, FormControl, Button  } from 'react-bootstrap';
 
 
 
-const Choice = () => {
+const Choice = ({holder}) => {
+
+  const [containChoice, setContainChoice] = useState([])
+console.log(holder)
+  useEffect(() => {
+
+    setContainChoice(holder)
+  
+   }, []);
 
 
 return (
@@ -15,7 +23,7 @@ return (
     
     <img width="auto" height="300"
       className=" mt-3 rounded border border-3 mx-auto d-block "
-      src={"https://th.bing.com/th/id/R.46c2726825537e028da5d4cc13a1d897?rik=vaSJxALonWee5g&pid=ImgRaw&r=0"}
+      src={containChoice.image_url}
       alt="First slide"
     />
  <h1 className='display-1 text-center my-1'>{}</h1>

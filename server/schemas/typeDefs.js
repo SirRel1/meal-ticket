@@ -8,6 +8,18 @@ const typeDefs = gql`
     name: String
   }
 
+  type User {
+    _id: ID!
+    firstname: String!
+    lastname: String!
+    email: String
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Matchup {
     _id: ID!
     tech1: String!
@@ -17,17 +29,29 @@ const typeDefs = gql`
   }
 
   type Query {
-    savedRest: [Tech]
-    tech: [Tech]
-    matchups(_id: String): [Matchup]
+    me: User
   }
 
   type Mutation {
+      login(email: String!, password: String!): Auth
+      addUser(firstname: String!, lastname: String!, email: String!, password: String!): Auth
+    }
+  
+
+  type Query {
+    savedRest: [Tech]
+  }
+  
+  type Mutation {
     saveBook(resid: String!, imageurl: String, name: String): Tech
     removeRest(did: String!): Tech
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
   }
 `;
+    // saveBook(resid: String!, imageurl: String, name: String): Tech
+    // removeRest(did: String!): Tech
+    // createMatchup(tech1: String!, tech2: String!): Matchup
+    // createVote(_id: String!, techNum: Int!): Matchup
+  
+
 
 module.exports = typeDefs;
