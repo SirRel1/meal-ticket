@@ -14,7 +14,7 @@ import moment from 'moment'
 
 
 
-function Checkout() {
+function Checkout(props) {
   const [order, setOrder] = useState("");
   const [showLaterModal, setshowLaterModal] = useState(false);
   const [showNowrModal, setshowNowModal] = useState(false);

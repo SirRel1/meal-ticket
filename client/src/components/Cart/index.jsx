@@ -159,6 +159,7 @@ const Cart = () => {
 
 return (
     <>
+
       {['end'].map((placement, idx) => (
         <OffCanvasCart key={idx} placement={placement} name={placement} className="displayOrder-ofc" />
       ))}

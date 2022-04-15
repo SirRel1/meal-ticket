@@ -25,7 +25,12 @@
     "react-icons": "^4.3.1",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@react-google-maps/api": "^2.8.1"
+
   },
   "scripts": {
     "start": "react-scripts start",

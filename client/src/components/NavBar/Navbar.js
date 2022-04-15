@@ -26,6 +26,8 @@ function Navbar() {
 		console.log(`click`);
 	};
 
+
+	
 	return (
 		<div>
 			<a href="/"><img className="logo" src={logo} alt="Meal Ticket Logo"></img></a>

@@ -1,71 +1,59 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
-  
-  }
-  body {
-    background: linear-gradient(black, white);
-  }
-  
-  .item-title{
-    text-align: center;
-    color: black;
-    padding: 20px;
-  }
-  nav{
-    background-color:goldenrod;
-    display: grid;
-    place-items: center;
-  
-  }
-  nav ul{
-    list-style-type: none;
-    margin-top: 11px !important;
-  }
-  nav ul a {
-    display: inline-block;
-    padding: 20px;
-    text-decoration: none;
-    color: white;
-    transition: 0.2s ease-in;
-  }
-  nav ul a:hover{
-    background-color:black;
-    color: white;
-  }
-  .logo{
-    width: 15%;
-    height: 20%;
-    align-items: center;
-    padding: 20px;
-    
-   
-  }
-  
-  @media all and (max-width: 1024px) {
-    
-  
-  }
-  
-  
-  
-  
-  @media all and (max-width: 980px) {
-    
-  
-  }
-  
-  @media all and (max-width: 720px) {
-    
-  
-  
-  }
-  
-  @media all and (max-width: 480px) {
-   
-  
-  
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(black, white);
+}
+
+.item-title {
+  text-align: center;
+  color: black;
+  padding: 20px;
+}
+nav {
+  background-color: goldenrod;
+  display: grid;
+  /* place-items: center; */
+  text-align: center;
+}
+nav ul {
+  list-style-type: none;
+  margin-top: 11px !important;
+}
+nav ul a {
+  display: inline-block;
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s ease-in;
+}
+nav ul a:hover {
+  background-color: black;
+  color: white;
+}
+/* logo */
+.logo {
+  width: 15%;
+  height: 20%;
+ margin: auto;
+ display: block;
+}
+
+input[searchInput] {
+  width: 50%;
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 980px) {
+}
+
+@media all and (max-width: 720px) {
+}
+
+@media all and (max-width: 480px) {
+}

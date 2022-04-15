@@ -4,14 +4,11 @@
 } */
 
 
-.container {
-    display: flex;
-    
-  
-}
+
 
 #checkout {
     margin: 0% -10% !important;
+    display: flex;
 }
 .col-xs-5 {
     flex: 1;

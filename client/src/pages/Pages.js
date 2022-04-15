@@ -9,6 +9,8 @@ import Navbar from '../components/NavBar/Navbar';
 import Fav from '../components/Fav';
 import StripeContainer from '../components/StripeContainer';
 import Cart from '../components/Cart';
+import { MenuProvider } from '../utils/MenuContext';
+import Checkout from './Checkout';
 
 
 function Pages() {
@@ -18,17 +20,19 @@ function Pages() {
   return (
       <Router>
           <Navbar />
-    <Routes>
+          <MenuProvider >
+      <Routes>
        <Route path="/" element={<Home/>} />
-       <Route path="/results/:id" element={<Results />} />
+       <Route path="/results/:id" element={<Results setHolder={setHolder} />} />
        <Route path="/login" element={<Login />} />
        <Route path="/signup" element={<Signup />} />
        <Route path="/choice/:id" element={<Choice holder={holder}  />} />
        <Route path="/favorites" element={<Fav />} />
        <Route path="/pay" element={<StripeContainer />} />
-       <Route path="/cart" element={<Cart />} />
+       <Route path="/checkout" element={<Checkout />} />
         
     </Routes>
+    </MenuProvider>
     </Router>
   )
 }

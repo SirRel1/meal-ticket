@@ -12,7 +12,7 @@ export const QUERY_FAV = gql`
 `;
 
 export const GET_ITEMS = gql`
-  query getitems($item: ID) {
+  query getItems($item: ID) {
     items(item: $item) {
       _id
       name
@@ -22,6 +22,7 @@ export const GET_ITEMS = gql`
     }
   }
 `;
+
 
 export const GET_ALL_ITEMS = gql`
   {
