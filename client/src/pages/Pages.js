@@ -11,7 +11,7 @@ import StripeContainer from '../components/StripeContainer';
 import Cart from '../components/Cart';
 import { MenuProvider } from '../utils/MenuContext';
 import Checkout from './Checkout';
-
+import ItemDetails from './ItemDetails/index.js'
 
 function Pages() {
   
@@ -30,6 +30,7 @@ function Pages() {
        <Route path="/favorites" element={<Fav />} />
        <Route path="/pay" element={<StripeContainer />} />
        <Route path="/checkout" element={<Checkout />} />
+       <Route path="/items/:id" element={<ItemDetails />} />
         
     </Routes>
     </MenuProvider>
