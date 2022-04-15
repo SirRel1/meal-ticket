@@ -1,0 +1,55 @@
+.items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 20px;
+    grid-column-gap: 30px;
+
+
+
+}
+.item img{
+    width: 100%;
+    height:300%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.2 ease;
+}
+.item img:hover{
+    transform: scale(1.04);
+}
+.item h4{
+    padding:5px;
+    text-align: center;
+}
+.item button{
+    padding: 5px 30 px;
+    border: none;
+    outline:none;
+    background-color:black;
+    color: white;
+    cursor: pointer;
+    border-radius:4px;
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+    transition: 0.2s all;
+
+}
+.items button:hover{
+    transform: scale(1.08);
+}
+@media screen  and (max-width: 1000px){
+.items{
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+@media screen  and (max-width: 768px){
+    .items{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    }
+       
+    
+
+
+

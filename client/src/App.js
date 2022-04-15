@@ -1,10 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+<<<<<<< HEAD
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Signup from '../src/pages/SignUp';
 import Results from './components/Results';
+=======
+import Pages from './pages/Pages';
+
+>>>>>>> 990f9126bd827ae09e3aa7e878411b2662383222
 
 
 const client = new ApolloClient({
@@ -13,36 +18,17 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+
+
   return (
+    
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-        <Navbar />
-          <Routes>
-            <Route 
-              path="/" 
-              element={<Home/>}
-            />
-            <Route 
-              path="/signup" 
-              element={<Signup/>}
-            />
-            <Route 
-              path="/result"
-              element={<Results/>}
-            />
-            <Route 
-              path="/matchup/:id" 
-              // element={}
-            />
-            <Route 
-              path="*"
-              // element={}
-            />
-          </Routes>
-        </div>
-      </Router>
-    </ApolloProvider>
+      
+     <Pages />
+     
+   </ApolloProvider>
+    
   );
 }
 

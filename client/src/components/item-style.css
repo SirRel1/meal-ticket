@@ -1,0 +1,95 @@
+.items{
+    margin: 80px 0px;
+   
+   
+   }
+   .in-between {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       padding: 20px 80px;
+       grid-column-gap: 30px;
+       background-color: rgb(71, 71, 71);
+       width: 120%;
+     
+   }
+   .item {
+       margin-top: 50px;
+       border: 2px solid goldenrod;
+       background-color: black;
+       color: white;
+   }
+   
+   
+   
+   .item img{
+       width: 50%;
+       height: 30%;
+       cursor: pointer;
+       transition: 0.2 ease;
+       margin: 32px 124px;
+   
+   }
+   .item img:hover{
+       transform: scale(1.04);
+      
+   }
+   .item h4{
+       padding:5px;
+       text-align: center;
+       color: white;
+       font-weight: bold;
+   }
+   .items h2{
+       color: white;
+       font-weight: bold;
+   }
+   
+   
+   .item-info {
+       margin: 10px 50px;
+       padding: 5px;
+       text-align: center;
+       width: 80%;
+   }
+   
+   .item button{
+       padding: 5px 30px;
+       border: none;
+       outline:none;
+       background-color: goldenrod;
+       color: white;
+       cursor: pointer;
+       border-radius:4px;
+       font-size: 20px;
+       display: block;
+       margin: 20px auto;
+       transition: 0.2s all;
+   
+   }
+   .items button:hover{
+       transform: scale(1.08);
+   }
+   @media screen  and (max-width: 1000px){
+   .items{
+       grid-template-columns: repeat(2, 1fr);
+   }
+   }
+   @media screen  and (max-width: 768px){
+       .items{
+           grid-template-columns: repeat(1, 1fr);
+       }
+       }
+   
+       @media screen and (max-width: 480px) {
+           .item img {
+               height: 45%;
+               margin: 32px 96px;
+           }
+       }
+          
+       
+   
+   
+   
+   
+   

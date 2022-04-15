@@ -1,22 +1,66 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_TECH = gql`
-  query tech {
-    tech {
+export const QUERY_FAV = gql`
+  query Query {
+  savedRest {
+    _id
+    resid
+    imageurl
+    name
+  }
+}
+`;
+
+export const GET_ITEMS = gql`
+  query getItems($item: ID) {
+    items(item: $item) {
       _id
       name
+      description
+      price
+      image
     }
   }
 `;
 
-export const QUERY_MATCHUPS = gql`
-  query matchups($_id: String) {
-    matchups(_id: $_id) {
+
+export const GET_ALL_ITEMS = gql`
+  {
+    items {
       _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
+      image
+      description
+      name
+      price
+    }
+  }
+`;
+
+
+export const GET_CHECKOUT = gql`
+  query getCheckout($items: [ID]!) {
+    checkout(items: $items) {
+      session
+    }
+  }
+`;
+
+export const GET_USER = gql`
+  {
+    user {
+      firstName
+      lastName
+      orders {
+        _id
+        purchaseDate
+        items {
+          _id
+          name
+          description
+          price
+          image
+        }
+      }
     }
   }
 `;
