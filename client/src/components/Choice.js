@@ -10,7 +10,7 @@ import { Row, Col, Container, NavDropdown, Form, FormControl, Button  } from 're
 const Choice = ({holder}) => {
 
   const [containChoice, setContainChoice] = useState([])
-  console.log(holder)
+  console.log( holder)
   useEffect(() => {
 
     setContainChoice(holder)
@@ -31,7 +31,7 @@ return (
  <h1 className='display-1 text-center my-1'>{}</h1>
       <div className="container">
         <AllMenuItems />
-        <Cart />
+        <Cart holder={holder} />
         </div>
 </Container>
 )

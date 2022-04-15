@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import MenuItem from '../MenuItem';
 import { useMenuContext } from '../../utils/MenuContext';
 import { UPDATE_ITEMS } from '../../utils/actions';
@@ -9,11 +9,17 @@ import spinner from './spinner.gif'
 import '../item-style.css'
 
 function AllMenuItems() {
+  
     const [state, dispatch] = useMenuContext();
     const { loading, data } = useQuery(GET_ALL_ITEMS);
 
     const {currentItem} = state
+    // useEffect(() => {
 
+    //   setContainChoice(holder)
+    
+    // }, []);
+    
     useEffect(() => {
         if (data) {
           dispatch({
@@ -47,7 +53,7 @@ function AllMenuItems() {
   return (
 
     <section className= "items">
-     <h2>Menu Items:</h2>
+     <h2> Menu Items:</h2>
       {state.items.length ? (
         <div className="in-between">
            

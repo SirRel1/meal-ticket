@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { useMenuContext } from '../../utils/MenuContext'
@@ -17,17 +17,17 @@ import map from "../../image/themap.png";
 
 
 
-const Cart = () => {
+const Cart = ({holder}) => {
+    console.log('This is the prop', holder)
+    const [containChoice, setContainChoice] = useState([])
     const [state, dispatch] = useMenuContext();
     const [getCheckout, { data }] = useLazyQuery(GET_CHECKOUT);
   
-    // useEffect(() => {
-    //   if (data) {
-    //     stripePromise.then((res) => {
-    //       res.redirectToCheckout({ sessionId: data.checkout.session });
-    //     });
-    //   }
-    // }, [data]);
+    useEffect(() => {
+
+      setContainChoice(holder)
+    
+    }, []);
   
     useEffect(() => {
       async function getCart() {
@@ -89,15 +89,16 @@ const Cart = () => {
           
           <Offcanvas   show={state.cartOpen} onHide={handleClose} {...props}>
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+              <Offcanvas.Title>MealTicket</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
                   <div>
-                      <h1>American Deli</h1>
-                      <img src={map} className="map"></img>
+       
+                      <h1>{containChoice.foodname}</h1>
+                      <img src={containChoice.image_url} className="map"></img>
                       <p className="loctext-ofc">
       
-                          <FaMapPin />3695 Cascade Rd. , Suite M, Atlanta, GA 30331
+                          <FaMapPin /> {containChoice.location}
                       </p>
                       <hr></hr>
                   

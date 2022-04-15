@@ -16,10 +16,11 @@ import ItemDetails from './ItemDetails/index.js'
 function Pages() {
   
   const [holder, setHolder] = useState([])
+  const [test, setTest] = useState('Test')
 
   return (
       <Router>
-          <Navbar />
+          <Navbar  />
           <MenuProvider >
       <Routes>
        <Route path="/" element={<Home/>} />
@@ -31,6 +32,7 @@ function Pages() {
        <Route path="/pay" element={<StripeContainer />} />
        <Route path="/checkout" element={<Checkout />} />
        <Route path="/items/:id" element={<ItemDetails />} />
+       <Route path="/cart/:id" element={<Cart test={test} />}  />
         
     </Routes>
     </MenuProvider>
