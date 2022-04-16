@@ -20,6 +20,10 @@ app.use(express.json());
 
 app.use(cors())
 
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
+
 app.post("/payment", cors(), async (req, res) => {
 	let { amount, id } = req.body
 	try {
