@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const CREATE_Rest = gql`
-	mutation SaveBook($resid: String!, $imageurl: String, $name: String) {
-		saveBook(resid: $resid, imageurl: $imageurl, name: $name) {
+	mutation SaveRest($resid: String!, $imageurl: String, $name: String) {
+		saveRest(resid: $resid, imageurl: $imageurl, name: $name) {
 			_id
 			resid
 			imageurl
@@ -19,18 +19,6 @@ export const REMOVE_FAV = gql`
 			name
 		}
 	}
-`;
-
-export const createUser = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
-    }
-  }
 `;
 
 export const CREATE_VOTE = gql`
